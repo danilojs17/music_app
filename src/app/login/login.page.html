@@ -1,0 +1,62 @@
+<ion-toolbar>
+  <ion-buttons>
+    <ion-button (click)="goToBack()">
+      Atras
+    </ion-button>
+  </ion-buttons>
+</ion-toolbar>
+<div class="container_login">
+  <ion-card class="card_login">
+    <ion-card-header>
+      <ion-card-subtitle>Ingresa tus crendenciales</ion-card-subtitle>
+      <ion-card-title>Iniciar sesión</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <form [formGroup]="loginForm" (ngSubmit)="loginUser(loginForm.value)">
+          <ion-input minlength="6" maxlength="40" label="Email" type="email" label-placement="floating" fill="outline" placeholder="myemail@email.com" formControlName="email"></ion-input>
+          <div class="message_error">
+            <ng-container *ngFor="let validation of validation_messages.email">
+              <div *ngIf="(
+                loginForm.get('email')?.hasError(validation.type) && 
+                loginForm.get('email')?.dirty) 
+              ">
+                {{validation.message}}
+              </div>
+            </ng-container>
+          </div>
+          <br />
+          <ion-input minlength="6" maxlength="40" label="Contraseña" type="password" label-placement="floating" fill="outline" placeholder="*******" formControlName="password"></ion-input>
+          <div class="message_error">
+            <ng-container *ngFor="let validation of validation_messages.password">
+              <div *ngIf="(
+                loginForm.get('password')?.hasError(validation.type) && 
+                loginForm.get('password')?.dirty) 
+              ">
+                {{validation.message}}
+              </div>
+            </ng-container>
+          </div>
+        <ion-button 
+          expand="full"
+          shape="round"
+          color="secondary"
+          [disabled]="!loginForm.valid"
+          type="submit"
+          >
+          Ingresar
+        </ion-button>
+      </form>
+      <ion-footer>
+        ¿No tienes una cuenta?
+        <ion-button
+          expand="full"
+          shape="round"
+          color="success"
+          (click)="goToRegister()"
+        >
+          Registrate aquí
+        </ion-button>
+      </ion-footer>
+    </ion-card-content>
+  </ion-card>
+</div>
