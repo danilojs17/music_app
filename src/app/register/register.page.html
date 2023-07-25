@@ -10,8 +10,8 @@
     <ion-card-header>
     <ion-buttons>
     </ion-buttons>
-      <ion-card-subtitle>Ingresa tus datos para el registro</ion-card-subtitle>
       <ion-card-title>Registrarme</ion-card-title>
+      <ion-card-subtitle>Ingresa tus datos para el registro</ion-card-subtitle>
     </ion-card-header>
     <ion-card-content>
       <form [formGroup]="registerForm" (ngSubmit)="registerUser(registerForm.value)">
@@ -73,7 +73,6 @@
           Registrarse
         </ion-button>
       </form>
-      <ion-footer>
         ¿Tienes una cuenta?
         <ion-button
           expand="full"
@@ -83,7 +82,6 @@
         >
           Iniciar sesión
         </ion-button>
-      </ion-footer>
     </ion-card-content>
   </ion-card>
 </div>

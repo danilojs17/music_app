@@ -13,11 +13,11 @@
   class="content"
   >
     <swiper-slide *ngFor="let tecnologie of listTecnologies">
-      <div class="title-slide">{{tecnologie.title}}</div>
-      <div class="imagenes">
+      <div class="title_slide ion-padding">{{tecnologie.title}}</div>
+      <div class="imagenes ion-align-items-center ion-justify-content-center">
         <img  [src]="tecnologie.img"/>
       </div>
-      <p class="parrafo">{{tecnologie.description}}</p>
+      <p class="parrafo ion-wrap">{{tecnologie.description}}</p>
     </swiper-slide>
   </swiper-container>
 </ion-content>

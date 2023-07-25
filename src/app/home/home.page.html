@@ -8,7 +8,7 @@
 <ion-content>
   <ion-card>
     <ion-card-header>
-      <ion-card-title>Artistas</ion-card-title>
+      <ion-card-title>Artistas del servidor</ion-card-title>
     </ion-card-header>
     <ion-card-content>
       <swiper-container 
@@ -20,6 +20,26 @@
           <ion-avatar (click)="showSongs(artist)">
             <img src="{{artist.image}}" />
             <span>{{artist.name}}</span>
+            <br />
+          </ion-avatar>
+        </swiper-slide>
+      </swiper-container>
+    </ion-card-content>
+  </ion-card>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Artistas locales</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <swiper-container 
+      [initialSlide]="0"
+      [slidesPerView]="3"
+      *ngIf="localArtists?.length > 0"
+      >
+        <swiper-slide *ngFor="let localArtist of localArtists">
+          <ion-avatar (click)="showSongs(localArtist)">
+            <img src="{{localArtist.images[0].url}}" />
+            <span>{{localArtist.name}}</span>
             <br />
           </ion-avatar>
         </swiper-slide>

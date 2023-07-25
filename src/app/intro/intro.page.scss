@@ -16,7 +16,7 @@ p {
 }
 
 ion-content {
-  --background: rgb(27, 27, 27);
+  --background: rgb(238, 238, 238)
 }
 
 .close-icon {
@@ -47,9 +47,7 @@ ion-content {
 #container p {
   font-size: 16px;
   line-height: 22px;
-
   color: #8c8c8c;
-
   margin: 0;
 }
 
@@ -57,11 +55,12 @@ ion-content {
   text-decoration: none;
 }
 
+// nota1.1
 .title {
   width: 100%;
   padding: 0;
   text-align: center;
-  // color: #38c0ff; 
+  // nota1.4
   color: var(--title-color);
   font-size: 24px;
   font-weight: bold;
@@ -70,7 +69,9 @@ ion-content {
 .content {
   padding: 20px;
 
-  .title-slide {
+  // nota1.1
+  .title_slide {
+    // nota1.5
     color: var(--ion-color-primary);
     text-align: center;
     padding: 10px;
@@ -81,9 +82,10 @@ ion-content {
   .imagenes {
     width: 100%;
     display: flex;
-    justify-content: center;
+    // nota1.4
     background: var(--background-color);
     padding: 10px;
+    // nota1.4
     border-radius: var(--border-radius);
 
     img {
@@ -92,6 +94,7 @@ ion-content {
   }
 
   .parrafo {
-    color: var(--ion-color-primary-contrast); // clase #2 punto 3
+    // nota1.5
+    color: var(--ion-color-warning-contrast);
   }
 }
